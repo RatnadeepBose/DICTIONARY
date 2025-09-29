@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartLearnAcademy - Ultimate Dictionary</title>
+    <title>SmartLearnAcademy - Merriam-Webster Dictionary</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -83,7 +83,7 @@
             position: relative;
         }
 
-        /* Neon Academy Badge */
+        /* Academy Badge */
         .academy-badge {
             display: inline-flex;
             align-items: center;
@@ -118,48 +118,6 @@
         @keyframes neon-shimmer {
             0% { left: -100%; }
             100% { left: 100%; }
-        }
-
-        @keyframes neon-pulse {
-            0% { 
-                color: #ff00ff;
-                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-            }
-            33% { 
-                color: #00ffff;
-                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-            }
-            66% { 
-                color: #ffff00;
-                text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
-            }
-            100% { 
-                color: #ff00ff;
-                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-            }
-        }
-
-        @keyframes neon-text {
-            0% {
-                background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            33% {
-                background: linear-gradient(90deg, #00ffff, #ffff00, #ff00ff);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            66% {
-                background: linear-gradient(90deg, #ffff00, #ff00ff, #00ffff);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            100% {
-                background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
         }
 
         header h1 {
@@ -309,16 +267,30 @@
             transform: translateY(-2px);
         }
 
-        /* --- Word of the Day --- */
-        .word-of-day {
+        /* --- Merriam-Webster Logo --- */
+        .merriam-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
             background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 25px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
+
+        .merriam-logo img {
+            height: 40px;
+        }
+
+        .merriam-logo span {
+            font-weight: 600;
+            color: #f1f5f9;
+            font-size: 1.1rem;
+        }
+
+
 
         .word-of-day-header {
             display: flex;
@@ -489,6 +461,11 @@
             border-left-color: #4f46e5;
         }
 
+        .definition-text {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
         .example {
             background: rgba(16, 185, 129, 0.15);
             padding: 10px 14px;
@@ -560,56 +537,36 @@
             font-size: 0.9rem;
         }
 
-        /* --- Antonyms Section --- */
-        .antonyms-section {
-            margin-top: 14px;
+        /* --- Etymology Section --- */
+        .etymology-section {
+            margin-top: 16px;
             padding: 14px;
-            background: rgba(239, 68, 68, 0.08);
+            background: rgba(245, 158, 11, 0.08);
             border-radius: 10px;
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.2);
         }
 
-        .antonyms-header {
+        .etymology-header {
             display: flex;
             align-items: center;
             gap: 8px;
             margin-bottom: 10px;
         }
 
-        .antonyms-header i {
-            color: #f87171;
+        .etymology-header i {
+            color: #f59e0b;
             font-size: 1rem;
         }
 
-        .antonyms-header h4 {
+        .etymology-header h4 {
             color: #f1f5f9;
             font-size: 1rem;
             font-weight: 600;
         }
 
-        .antonyms-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .antonym-tag {
-            background: rgba(239, 68, 68, 0.15);
-            color: #f87171;
-            padding: 6px 12px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
-
-        .antonym-tag:hover {
-            background: rgba(239, 68, 68, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.2);
+        .etymology-text {
+            color: rgba(203, 213, 225, 0.9);
+            line-height: 1.5;
         }
 
         /* --- Audio Button --- */
@@ -669,6 +626,11 @@
             border-left: 4px solid #4f46e5;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .loading-text {
@@ -1001,6 +963,13 @@
                 </div>
             </div>
         </header>
+        
+        <!-- Merriam-Webster Logo -->
+        <div class="merriam-logo">
+            <img src="https://imgs.search.brave.com/UR-yjT_5VfTBtgtiotGF1Ey_gJv8L70pCtUIuOvGhc8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8zLzMyL01l/cnJpYW0tV2Vic3Rl/cl9sb2dvLnN2Zy8y/NTBweC1NZXJyaWFt/LVdlYnN0ZXJfbG9n/by5zdmcucG5n" alt="Merriam-Webster Logo">
+            <span>Powered by Merriam-Webster's Intermediate Dictionary</span>
+        </div>
+        
         <div class="search-container">
             <div class="search-bar">
                 <input type="text" id="wordInput" class="search-input" placeholder="Enter a word to look up...">
@@ -1009,8 +978,16 @@
                 </button>
             </div>
             
-
+            <div class="quick-words">
+                <div class="quick-word" onclick="searchQuickWord('dictionary')">Dictionary</div>
+                <div class="quick-word" onclick="searchQuickWord('learning')">Learning</div>
+                <div class="quick-word" onclick="searchQuickWord('knowledge')">Knowledge</div>
+                <div class="quick-word" onclick="searchQuickWord('education')">Education</div>
+                <div class="quick-word" onclick="searchQuickWord('vocabulary')">Vocabulary</div>
+            </div>
         </div>
+
+
 
         <div id="results">
             <div class="empty-state">
@@ -1031,7 +1008,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Our Location</h3>
-                            <p>Raikatpara,Jalpaiguri-735101.</p>
+                            <p>Raikatpara, Jalpaiguri-735101</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1059,15 +1036,14 @@
                         <div class="contact-details">
                             <h3>Website</h3>
                             <p>
-    <a href="https://ratnadeepbose.github.io/smartlearn-website/" target="_blank" rel="noopener noreferrer">
-        Visit SmartLearn Website
-    </a>
-</p>
-
+                                <a href="https://ratnadeepbose.github.io/smartlearn-website/" target="_blank" rel="noopener noreferrer" style="color: #818cf8;">
+                                    Visit SmartLearn Website
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" placeholder="Enter your full name">
@@ -1095,13 +1071,17 @@
         <footer class="main-footer">
             <div class="footer-content">
                 <div class="academy-logo">SmartLearnAcademy</div>
-                <p>Ultimate Dictionary powered by SmartLearnAcademy</p>
+                <p>Ultimate Dictionary powered by Merriam-Webster's Intermediate Dictionary API</p>
                 <p>&copy; 2023 SmartLearnAcademy. All rights reserved.</p>
             </div>
         </footer>
     </div>
 
     <script>
+        // Merriam-Webster API Key
+        const API_KEY = 'a0680ed1-29fd-451c-8722-cab4bffe2b2d';
+        const API_BASE_URL = 'https://www.dictionaryapi.com/api/v3/references/sd3/json/';
+
         // Dictionary search function
         async function searchWord() {
             const word = document.getElementById('wordInput').value.trim();
@@ -1127,12 +1107,25 @@
             `;
 
             try {
-                const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-                if (!response.ok) throw new Error('Word not found');
+                const response = await fetch(`${API_BASE_URL}${word}?key=${API_KEY}`);
+                if (!response.ok) throw new Error('Failed to fetch data');
+                
                 const data = await response.json();
-
+                
+                // Check if the response is an array of suggestions
+                if (Array.isArray(data) && data.length > 0 && typeof data[0] === 'string') {
+                    resultsDiv.innerHTML = `
+                        <div class="error">
+                            <i class="fas fa-exclamation-triangle"></i> 
+                            Word not found. Did you mean: ${data.slice(0, 5).join(', ')}?
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Process the actual word data
                 resultsDiv.innerHTML = '';
-
+                
                 data.forEach(entry => {
                     const card = document.createElement('div');
                     card.className = 'result-card';
@@ -1145,14 +1138,14 @@
                     wordTitle.className = 'word-title';
 
                     const title = document.createElement('h2');
-                    title.textContent = entry.word;
+                    title.textContent = entry.meta ? entry.meta.id : word;
                     wordTitle.appendChild(title);
 
                     // Add phonetic if available
-                    if (entry.phonetic) {
+                    if (entry.hwi && entry.hwi.prs && entry.hwi.prs.length > 0) {
                         const phonetic = document.createElement('span');
                         phonetic.className = 'phonetic';
-                        phonetic.textContent = entry.phonetic;
+                        phonetic.textContent = entry.hwi.prs[0].mw;
                         wordTitle.appendChild(phonetic);
                     }
 
@@ -1175,123 +1168,112 @@
                     wordHeader.appendChild(wordActions);
                     card.appendChild(wordHeader);
 
-                    // Process each meaning
-                    entry.meanings.forEach(meaning => {
+                    // Part of speech
+                    if (entry.fl) {
+                        const partOfSpeech = document.createElement('div');
+                        partOfSpeech.className = 'part-of-speech';
+                        partOfSpeech.textContent = entry.fl;
+                        card.appendChild(partOfSpeech);
+                    }
+
+                    // Definitions
+                    if (entry.def && entry.def.length > 0) {
                         const meaningSection = document.createElement('div');
                         meaningSection.className = 'meaning-section';
 
-                        const part = document.createElement('div');
-                        part.className = 'part-of-speech';
-                        part.textContent = meaning.partOfSpeech;
-                        meaningSection.appendChild(part);
+                        entry.def.forEach((defObj, defIndex) => {
+                            if (defObj.sseq) {
+                                defObj.sseq.forEach(senseGroup => {
+                                    senseGroup.forEach(sense => {
+                                        if (sense[0] === 'sense') {
+                                            const senseData = sense[1];
+                                            const defItem = document.createElement('div');
+                                            defItem.className = 'definition-item';
 
-                        meaning.definitions.forEach((def, i) => {
+                                            const defText = document.createElement('div');
+                                            defText.className = 'definition-text';
+
+                                            // Process definition text
+                                            if (senseData.dt) {
+                                                let definitionHTML = '';
+                                                senseData.dt.forEach(dt => {
+                                                    if (dt[0] === 'text') {
+                                                        definitionHTML += processDefinitionText(dt[1]);
+                                                    }
+                                                });
+                                                defText.innerHTML = definitionHTML;
+                                            }
+
+                                            defItem.appendChild(defText);
+                                            meaningSection.appendChild(defItem);
+                                        }
+                                    });
+                                });
+                            }
+                        });
+
+                        card.appendChild(meaningSection);
+                    }
+
+                    // Short definitions
+                    if (entry.shortdef && entry.shortdef.length > 0) {
+                        const shortDefSection = document.createElement('div');
+                        shortDefSection.className = 'meaning-section';
+
+                        const shortDefHeader = document.createElement('div');
+                        shortDefHeader.className = 'part-of-speech';
+                        shortDefHeader.textContent = 'Short Definitions';
+                        shortDefSection.appendChild(shortDefHeader);
+
+                        entry.shortdef.forEach((def, index) => {
                             const defItem = document.createElement('div');
                             defItem.className = 'definition-item';
 
                             const defP = document.createElement('p');
-                            defP.innerHTML = `<strong>${i + 1}.</strong> ${def.definition}`;
+                            defP.innerHTML = `<strong>${index + 1}.</strong> ${def}`;
                             defItem.appendChild(defP);
 
-                            if (def.example) {
-                                const exP = document.createElement('p');
-                                exP.className = 'example';
-                                exP.innerHTML = `<i class="fas fa-quote-left"></i> ${def.example}`;
-                                defItem.appendChild(exP);
-                            }
-
-                            meaningSection.appendChild(defItem);
+                            shortDefSection.appendChild(defItem);
                         });
 
-                        // Add synonyms section for this part of speech
-                        const allSynonyms = new Set();
-                        meaning.definitions.forEach(def => {
-                            if (def.synonyms && def.synonyms.length > 0) {
-                                def.synonyms.forEach(syn => allSynonyms.add(syn));
+                        card.appendChild(shortDefSection);
+                    }
+
+                    // Etymology
+                    if (entry.et) {
+                        const etymologySection = document.createElement('div');
+                        etymologySection.className = 'etymology-section';
+
+                        const etymologyHeader = document.createElement('div');
+                        etymologyHeader.className = 'etymology-header';
+                        etymologyHeader.innerHTML = `
+                            <i class="fas fa-history"></i>
+                            <h4>Etymology</h4>
+                        `;
+                        etymologySection.appendChild(etymologyHeader);
+
+                        const etymologyText = document.createElement('div');
+                        etymologyText.className = 'etymology-text';
+                        
+                        let etymologyHTML = '';
+                        entry.et.forEach(et => {
+                            if (et[0] === 'text') {
+                                etymologyHTML += processDefinitionText(et[1]);
                             }
                         });
+                        
+                        etymologyText.innerHTML = etymologyHTML;
+                        etymologySection.appendChild(etymologyText);
+                        card.appendChild(etymologySection);
+                    }
 
-                        if (allSynonyms.size > 0) {
-                            const synonymsSection = document.createElement('div');
-                            synonymsSection.className = 'synonyms-section';
-
-                            const synonymsHeader = document.createElement('div');
-                            synonymsHeader.className = 'synonyms-header';
-                            synonymsHeader.innerHTML = `
-                                <i class="fas fa-sync-alt"></i>
-                                <h4>Synonyms</h4>
-                            `;
-                            synonymsSection.appendChild(synonymsHeader);
-
-                            const synonymsContainer = document.createElement('div');
-                            synonymsContainer.className = 'synonyms-container';
-
-                            Array.from(allSynonyms).slice(0, 10).forEach(syn => {
-                                const synTag = document.createElement('span');
-                                synTag.className = 'synonym-tag';
-                                synTag.textContent = syn;
-                                synTag.onclick = () => {
-                                    document.getElementById('wordInput').value = syn;
-                                    searchWord();
-                                };
-                                synonymsContainer.appendChild(synTag);
-                            });
-
-                            synonymsSection.appendChild(synonymsContainer);
-                            meaningSection.appendChild(synonymsSection);
-                        }
-
-                        // Add antonyms section for this part of speech
-                        const allAntonyms = new Set();
-                        meaning.definitions.forEach(def => {
-                            if (def.antonyms && def.antonyms.length > 0) {
-                                def.antonyms.forEach(ant => allAntonyms.add(ant));
-                            }
-                        });
-
-                        if (allAntonyms.size > 0) {
-                            const antonymsSection = document.createElement('div');
-                            antonymsSection.className = 'antonyms-section';
-
-                            const antonymsHeader = document.createElement('div');
-                            antonymsHeader.className = 'antonyms-header';
-                            antonymsHeader.innerHTML = `
-                                <i class="fas fa-exchange-alt"></i>
-                                <h4>Antonyms</h4>
-                            `;
-                            antonymsSection.appendChild(antonymsHeader);
-
-                            const antonymsContainer = document.createElement('div');
-                            antonymsContainer.className = 'antonyms-container';
-
-                            Array.from(allAntonyms).slice(0, 10).forEach(ant => {
-                                const antTag = document.createElement('span');
-                                antTag.className = 'antonym-tag';
-                                antTag.textContent = ant;
-                                antTag.onclick = () => {
-                                    document.getElementById('wordInput').value = ant;
-                                    searchWord();
-                                };
-                                antonymsContainer.appendChild(antTag);
-                            });
-
-                            antonymsSection.appendChild(antonymsContainer);
-                            meaningSection.appendChild(antonymsSection);
-                        }
-
-                        card.appendChild(meaningSection);
-                    });
-
-                    // Add audio button if available
-                    if (entry.phonetics && entry.phonetics.length > 0) {
-                        const audioObj = entry.phonetics.find(p => p.audio);
-                        if (audioObj) {
-                            const audioBtn = document.createElement('button');
-                            audioBtn.className = 'audio-btn';
-                            audioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play Pronunciation';
-                            audioBtn.onclick = () => new Audio(audioObj.audio).play();
-                            card.appendChild(audioBtn);
-                        }
+                    // Audio button if available
+                    if (entry.hwi && entry.hwi.prs && entry.hwi.prs.length > 0 && entry.hwi.prs[0].sound) {
+                        const audioBtn = document.createElement('button');
+                        audioBtn.className = 'audio-btn';
+                        audioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play Pronunciation';
+                        audioBtn.onclick = () => playAudio(entry.hwi.prs[0].sound.audio);
+                        card.appendChild(audioBtn);
                     }
 
                     resultsDiv.appendChild(card);
@@ -1306,11 +1288,36 @@
             }
         }
 
+        // Process definition text with formatting
+        function processDefinitionText(text) {
+            return text
+                .replace(/{bc}/g, '<strong>:</strong> ')
+                .replace(/{it}(.*?){\/it}/g, '<em>$1</em>')
+                .replace(/{ldquo}(.*?){\/rdquo}/g, '"$1"')
+                .replace(/{sx\|(.*?)\|\|}/g, '<span class="synonym-tag">$1</span>')
+                .replace(/{dx}(.*?){\/dx}/g, '<div class="example">$1</div>')
+                .replace(/{dxt\|(.*?)\|\|}/g, '<span class="synonym-tag">$1</span>');
+        }
+
+        // Play audio pronunciation
+        function playAudio(audioFile) {
+            const baseUrl = 'https://media.merriam-webster.com/audio/prons/en/us/mp3/';
+            const subdirectory = audioFile.charAt(0);
+            const audioUrl = `${baseUrl}${subdirectory}/${audioFile}.mp3`;
+            
+            const audio = new Audio(audioUrl);
+            audio.play().catch(e => {
+                console.error('Error playing audio:', e);
+                alert('Could not play audio pronunciation');
+            });
+        }
+
         // Quick word search function
         function searchQuickWord(word) {
             document.getElementById('wordInput').value = word;
             searchWord();
         }
+
 
         // Add event listener for Enter key
         document.getElementById('wordInput').addEventListener('keypress', function (e) {
